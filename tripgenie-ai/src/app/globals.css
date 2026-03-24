@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Brand Custom Palette - Sunset Theme */
+  --color-brand-primary: #A134D3;
+  --color-brand-secondary: #00C2A8;
+  --color-brand-accent: #FFD166;
+  --color-brand-bg: #F5F9FF;
+  
+  --color-background-light: #ffffff;
+  --color-background-dark: #fafafa;
+  --color-foreground-light: #000000;
+  --color-foreground-dark: #09090b;
+}
+
+:root {
+  --background: var(--color-background-light);
+  --foreground: var(--color-foreground-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-background-dark);
+    --foreground: var(--color-foreground-dark);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities for Beautiful UI */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Beautiful custom soft shadow */
+.shadow-soft {
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.15);
+}
+
+/* Hide scrollbar for clean carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
